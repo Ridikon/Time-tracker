@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+$blue-color: #77f4ec;
+$grey-color: #ccc;
+$red-color: #cc3230;
+$green-color: #59cc74;
+
+.task {
+    display: flex;
+    padding: 20px;
+    border: 2px solid $blue-color;
+    border-radius: 10px;
+}
+
+.description {
+    flex-grow: 3;
+    margin-right: 30px;
+    border: none;
+    border-right: 1px dashed $grey-color;
+}
+
+.timer {
+    flex-grow: 1;
+}
+
+.time-count {
+    margin: 0 20px;
+}
+
+.triggers {
+    display: inline-block;
+
+    .fa {
+        cursor: pointer;
+        color: $blue-color;
+    }
+
+    .fa-stop {
+        color: $red-color;
+    }
+
+    .active-state {
+        color: $green-color;
+    }
+}

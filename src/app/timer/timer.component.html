@@ -1,0 +1,11 @@
+<div class="task">
+    <textarea class="description" value="" placeholder="What are you working on?">{{description}}</textarea>
+    <div class="timer">
+        <span class="time-count fa-2x">{{count ? count : '0:00:00'}}</span>
+        <div class="triggers">
+            <i class="fa fa-2x fa-play active-state" (click)="playPause('play')" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-pause" (click)="playPause('pause')" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-stop" (click)="playPause('stop')" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
