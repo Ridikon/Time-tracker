@@ -5,22 +5,43 @@ $grey-color: #ccc;
 $red-color: #cc3230;
 $green-color: #59cc74;
 
+/*helper classes*/
+.mb-2 {
+    margin-bottom: 2rem;
+}
+/*helper classes*/
+
 .task {
     display: flex;
     padding: 20px;
     border: 2px solid $blue-color;
     border-radius: 10px;
+
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+
+        .description {
+            width: 100%;
+        }
+
+        .timer {
+            width: 100%;
+        }
+    }
 }
 
 .description {
-    flex-grow: 3;
+    width: 70%;
     margin-right: 30px;
     border: none;
     border-right: 1px dashed $grey-color;
+    resize: vertical;
 }
 
 .timer {
-    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
 }
 
 .time-count {
@@ -28,18 +49,20 @@ $green-color: #59cc74;
 }
 
 .triggers {
+    width: 100px;
     display: inline-block;
 
     .fa {
         cursor: pointer;
         color: $blue-color;
+        padding-bottom: 5px;
     }
 
-    .fa-stop {
+    .fa-stop, .fa-trash {
         color: $red-color;
     }
 
     .active-state {
-        color: $green-color;
+        border-bottom: 0.2rem solid $red-color;
     }
 }

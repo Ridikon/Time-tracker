@@ -1,2 +1,13 @@
-<app-timer></app-timer>
+<app-timer (onAddTimer)="updateTimersList($event)" [timerItem]="continuedTimer"></app-timer>
+<hr>
+<div class="task mb-2" *ngFor="let task of timersData">
+    <div class="description">{{task.description}}</div>
+    <div class="timer">
+        <span class="time-count fa-2x">{{task.spendTime}}</span>
+        <div class="triggers">
+            <i class="fa fa-2x fa-play" (click)="continueTimer(task)" aria-hidden="true"></i>
+            <i class="fa fa-2x fa-trash" (click)="deleteTimer(task.id)" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
 
